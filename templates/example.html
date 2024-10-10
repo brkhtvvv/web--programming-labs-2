@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бархатова Ольга. Лабораторная 2</title>
+    <title>
+        {% if name %}
+            {{name}}. 
+        {% else %}
+            Анонимус. 
+        {% endif %} 
+        Лабораторная работа {{numberLab}}</title>
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 </head>
 <body>
     <header>
-        WEB-программирование, часть 2. Лабораторная работа 2
+        WEB-программирование, часть 2. {% if numberLab %}Лабораторная работа {{numberLab}}{% endif %}
     </header>
 
     <main class="math">
@@ -20,7 +26,23 @@
     </main>
 
     <footer>
-        &copy; {{name}}, ФБИ-24, 3 курс, 2024
+        &copy;
+        {% if name %}
+            {{name}},
+        {% else %}
+            Анонимус,
+        {% endif %}
+        {% if groupStudent %}
+            {{groupStudent}},
+        {% else %}
+            Группа неизвестна,
+        {% endif %}
+        {% if numberCourse %}
+            {{numberCourse}},
+        {% else %}
+            Курс недоступен,
+        {% endif %}
+        2024
     </footer>
 </body>
 </html>
