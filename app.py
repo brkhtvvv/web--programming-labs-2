@@ -175,6 +175,9 @@ def add_flower(name):
     </body>
 </html>
 '''
+
+
 @app.route('/lab2/example')
-def example():
-    return render_template('example.html')
+def example ():
+    name = 'Бархатова Ольга'
+    return render_template('example.html', name=name)
