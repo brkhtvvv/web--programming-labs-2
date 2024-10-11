@@ -195,10 +195,9 @@ def example ():
         {'name': 'мандарины', 'price': 95},
         {'name': 'манго', 'price': 321}
     ]
-    return render_template('example.html', 
-                           name=name, numberLab=numberLab, groupStudent=groupStudent, 
-                           numberCourse=numberCourse, fruits=fruits)
-
+    return render_template('example.html', name=name, numberLab=numberLab,
+                           groupStudent=groupStudent, numberCourse=numberCourse, 
+                           fruits=fruits)
 @app.route('/lab2/')
 def lab2():
     return render_template('lab2.html')
@@ -217,3 +216,20 @@ def calc_without_numbers():
 @app.route('/lab2/calc/<int:a>/')
 def calc_with_a(a):
     return redirect(url_for('calc', a=a, b=1))
+
+book_list = [
+        {'author': 'Маргарет Митчелл', 'name': 'Унесенные ветром', 'genre': 'Роман', 'str': '704'}, 
+        {'author': 'Лев Толстой', 'name': 'Война и мир', 'genre': 'Роман', 'str': '1225'},
+        {'author': 'Фёдор Достоевский', 'name': 'Преступление и наказание', 'genre': 'Роман', 'str': '430'},
+        {'author': 'Анна Ахматова', 'name': 'Реквием', 'genre': 'Поэзия', 'str': '200'},
+        {'author': 'Александр Пушкин', 'name': 'Евгений Онегин', 'genre': 'Поэма', 'str': '500'},
+        {'author': 'Габриэль Гарсия Маркес', 'name': 'Сто лет одиночества', 'genre': 'Роман', 'str': '417'},
+        {'author': 'Френсис Скотт Фицджеральд', 'name': 'Великий Гэтсби', 'genre': 'Роман', 'str': '180'},
+        {'author': 'Джордж Оруэлл', 'name': '1984', 'genre': 'Роман', 'str': '328'},
+        {'author': 'Коэльо Пауло', 'name': 'Алхимик', 'genre': 'Роман', 'str': '208'},
+        {'author': 'Даниэль Дефо', 'name': 'Робинзон Крузо', 'genre': 'Роман', 'str': '320'},
+        {'author': 'Тургенев Иван', 'name': 'Отцы и дети', 'genre': 'Роман', 'str': '280'}
+    ]
+@app.route('/lab2/books')
+def books():
+    return render_template('books.html', book_list=book_list)
