@@ -233,3 +233,34 @@ book_list = [
 @app.route('/lab2/books')
 def books():
     return render_template('books.html', book_list=book_list)
+
+cars = [
+    {
+        "name": "Rolls-Royce Phantom",
+        "image": "Rolls-Royce Phantom.jpg",
+        "description": "Флагманская модель британского бренда. Воплощение роскоши и комфорта."
+    },
+    {
+        "name": "Bentley Continental GT",
+        "image": "Bentley Continental GT.jpg",
+        "description": "Элегантное купе с мощным двигателем и динамичными характеристиками."
+    },
+    {
+        "name": "Aston Martin DB11",
+        "image": "Aston Martin DB11.jpg",
+        "description": "Стильный и современный спортивный автомобиль с фирменным дизайном Aston Martin."
+    },
+    {
+        "name": "Mercedes-Benz S-Class",
+        "image": "Mercedes-Benz S-Class.jpg",
+        "description": "Флагманский седан Mercedes-Benz, воплощение роскоши и технологичности."
+    },
+    {
+        "name": "Maserati Ghibli",
+        "image": "Maserati Ghibli.jpg",
+        "description": "Итальянский седан с мощным двигателем и стильным дизайном."
+    }
+]
+@app.route('/lab2/cars')
+def cars_page():
+    return render_template('cars.html', cars=cars)
