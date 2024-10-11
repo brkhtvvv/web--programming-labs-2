@@ -150,31 +150,37 @@ def a():
 def a2():
     return 'со слэшем'
 
-flower_list = ['роза', 'тюльпан', 'незабудка', 'ромашка']
+all_flower_list = [
+    {'name': 'пион', 'kolvo': 19},
+    {'name': 'ромашка', 'kolvo': 17},
+    {'name': 'хризантема', 'kolvo': 10},
+    {'name': 'сирень', 'kolvo': 3},
+]
 
 @app.route('/lab2/flowers/<int:flower_id>')
 def flowers(flower_id):
-    if flower_id >= len(flower_list):
+    if flower_id >= len(all_flower_list):
         return "такого цветка нет ", 404
     else:
-        return "цветок: " + flower_list[flower_id]
+        return render_template('addflower.html', flower_id=flower_id, flower=all_flower_list[flower_id])
     
 @app.route ('/lab2/flowers/<name>')
 def add_flower(name):
-    flower_list.append(name)
-    return f'''
-<!doctype html>
-<html>
-    <body>
-        <h1>Добавлен новый цветок</h1>
-        <p>
-        Название нового цветка: {name}
-        </p>
-        <p> Всего цветов: {len(flower_list)} </p>
-        <p> Полный список: {flower_list} </p>
-    </body>
-</html>
-'''
+    for flower in all_flower_list:
+        if flower['name'] == name:
+            return f"Цветок с именем {name} уже существует.", 400
+    all_flower_list.append({'name': name, 'kolvo': 1})  
+    return redirect(url_for('all_flowers'))
+@app.route('/lab2/flower/')
+def no_flower():
+    return "Вы не задали имя цветка", 400   
+@app.route('/lab2/all_flowers')
+def all_flowers():
+    return render_template('flowers.html', all_flower_list=all_flower_list)
+@app.route('/lab2/flowers/clear')
+def clear_flowers():
+    all_flower_list.clear()
+    return redirect(url_for('all_flowers'))
 
 @app.route('/lab2/example')
 def example ():
