@@ -70,7 +70,7 @@ def example ():
 
 
 @lab2.route('/lab2/')
-def lab2():
+def lab_2():
     return render_template('lab2.html')
 
 
