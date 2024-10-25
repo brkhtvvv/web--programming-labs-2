@@ -110,3 +110,15 @@ def train_ticket():
                                destination_point=destination_point,
                                travel_date=travel_date)
     return render_template('lab3/train_ticket.html')
+
+
+@lab3.route('/lab3/clearCookie')
+def clear_cookie():
+    cookies_to_clear = ['bg_color', 'color', 'font_size']
+    response = make_response(redirect('/lab3')) 
+    
+    for cookie in cookies_to_clear:
+        if cookie in request.cookies:
+            response.set_cookie(cookie, '', expires=0)
+    
+    return response
