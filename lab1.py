@@ -52,7 +52,7 @@ def oak():
     <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
     <body>
         <h1 style='padding-left: 15px'>Дуб</h1>
-        <img src="''' + url_for('static', filename='dyb.jpg') + '''" class='dyb'>
+        <img src="''' + url_for('static', filename='lab1/dyb.jpg') + '''" class='dyb'>
     </body>
 </html>
 '''
@@ -66,7 +66,7 @@ def student():
     <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
     <body>
         <h1>Бархатова Ольга Викторовна</h1>
-        <img src="''' + url_for('static', filename='nstu.png') + '''" class='nstu'>
+        <img src="''' + url_for('static', filename='lab1/nstu.png') + '''" class='nstu'>
         <div>
             <a href="http://127.0.0.1:5000/lab1" class='backmenu'>Назад</a>
         </div>
@@ -89,7 +89,7 @@ def python():
         <p>
             Главное достоинство Python — простота синтаксиса и команд, а также большое количество библиотек, которые содержат уже написанный программный код для решения широкого спектра задач. Python даже применяют в своих исследованиях и разработках специалисты, чьи профессии напрямую не связаны с программированием. Один из самых частых примеров — применение Python для анализа большого количества данных и нахождения корреляции между ними.
         </p>
-        <img src="''' + url_for('static', filename='python.jpg') + '''" class='python'>
+        <img src="''' + url_for('static', filename='lab1/python.jpg') + '''" class='python'>
         <div>
             <a href="http://127.0.0.1:5000/lab1" class='backmenu'>Назад</a>
         </div>
@@ -112,7 +112,7 @@ def new_year():
         <p>
         В конце декабря 1699 года Петр I издал именной указ № 1736 «О праздновании Нового года». Он ввел новую систему исчисления — от Рождества Христова, и 7208 год «от сотворения мира» стал 1700 годом. =
         </p>
-        <img src="''' + url_for('static', filename='new_year.jpg') + '''" class='new_year'>
+        <img src="''' + url_for('static', filename='lab1/new_year.jpg') + '''" class='new_year'>
         <div>
             <a href="http://127.0.0.1:5000/lab1" class='backmenu'>Назад</a>
         </div>

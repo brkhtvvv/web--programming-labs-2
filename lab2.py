@@ -24,7 +24,7 @@ def flowers(flower_id):
     if flower_id >= len(all_flower_list):
         return "такого цветка нет ", 404
     else:
-        return render_template('addflower.html', flower_id=flower_id, flower=all_flower_list[flower_id])
+        return render_template('lab2/addflower.html', flower_id=flower_id, flower=all_flower_list[flower_id])
     
 
 @lab2.route ('/lab2/flowers/<name>')
@@ -33,7 +33,7 @@ def add_flower(name):
         if flower['name'] == name:
             return f"Цветок с именем {name} уже существует.", 400
     all_flower_list.lab2end({'name': name, 'kolvo': 1})  
-    return redirect(url_for('all_flowers'))
+    return redirect(url_for('lab2.all_flowers'))
 
 
 @lab2.route('/lab2/flower/')
@@ -49,7 +49,7 @@ def all_flowers():
 @lab2.route('/lab2/flowers/clear')
 def clear_flowers():
     all_flower_list.clear()
-    return redirect(url_for('all_flowers'))
+    return redirect(url_for('lab2.all_flowers'))
 
 @lab2.route('/lab2/example')
 def example ():
@@ -64,34 +64,34 @@ def example ():
         {'name': 'мандарины', 'price': 95},
         {'name': 'манго', 'price': 321}
     ]
-    return render_template('example.html', name=name, numberLab=numberLab,
+    return render_template('lab2/example.html', name=name, numberLab=numberLab,
                            groupStudent=groupStudent, numberCourse=numberCourse, 
                            fruits=fruits)
 
 
 @lab2.route('/lab2/')
 def lab_2():
-    return render_template('lab2.html')
+    return render_template('lab2/lab2.html')
 
 
 @lab2.route('/lab2/filters')
 def filters():
     phrase = 'О <b>сколько</b> <u>нам</u> <i>открытий</i> чудных...'
-    return render_template('filter.html', phrase = phrase)
+    return render_template('lab2/filter.html', phrase = phrase)
 
 @lab2.route('/lab2/calc/<int:a>/<int:b>')
 def calc(a, b):
-    return render_template('calc.html', a=a, b=b)
+    return render_template('lab2/calc.html', a=a, b=b)
 
 
 @lab2.route('/lab2/calc/')
 def calc_without_numbers():
-    return redirect(url_for('calc', a=1, b=1))
+    return redirect(url_for('lab2.calc', a=1, b=1))
 
 
 @lab2.route('/lab2/calc/<int:a>/')
 def calc_with_a(a):
-    return redirect(url_for('calc', a=a, b=1))
+    return redirect(url_for('lab2.calc', a=a, b=1))
 
 book_list = [
         {'author': 'Маргарет Митчелл', 'name': 'Унесенные ветром', 'genre': 'Роман', 'str': '704'}, 
@@ -110,33 +110,33 @@ book_list = [
 
 @lab2.route('/lab2/books')
 def books():
-    return render_template('books.html', book_list=book_list)
+    return render_template('lab2/books.html', book_list=book_list)
 
 
 cars = [
     {
         "name": "Rolls-Royce Phantom",
-        "image": "Rolls-Royce Phantom.jpg",
+        "image": "lab2/Rolls.jpg",
         "description": "Флагманская модель британского бренда. Воплощение роскоши и комфорта."
     },
     {
         "name": "Bentley Continental GT",
-        "image": "Bentley Continental GT.jpg",
+        "image": "lab2/Bentley.jpg",
         "description": "Элегантное купе с мощным двигателем и динамичными характеристиками."
     },
     {
         "name": "Aston Martin DB11",
-        "image": "Aston Martin DB11.jpg",
+        "image": "lab2/Aston.jpg",
         "description": "Стильный и современный спортивный автомобиль с фирменным дизайном Aston Martin."
     },
     {
         "name": "Mercedes-Benz S-Class",
-        "image": "Mercedes-Benz S-Class.jpg",
+        "image": "lab2/Mercedes.jpg",
         "description": "Флагманский седан Mercedes-Benz, воплощение роскоши и технологичности."
     },
     {
         "name": "Maserati Ghibli",
-        "image": "Maserati Ghibli.jpg",
+        "image": "lab2/Maserati.jpg",
         "description": "Итальянский седан с мощным двигателем и стильным дизайном."
     }
 ]
@@ -144,4 +144,4 @@ cars = [
 
 @lab2.route('/lab2/cars')
 def cars_page():
-    return render_template('cars.html', cars=cars)
+    return render_template('lab2/cars.html', cars=cars)
