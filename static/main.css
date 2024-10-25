@@ -4,7 +4,7 @@ body {
     font-family: Arial;
     margin: 4px;
     text-align: left;
-    line-height: 40px;
+    line-height: 20px;
     font-size: 20px;
 }
 
@@ -34,4 +34,25 @@ main {
 .error {
     color:rgb(107, 19, 19);
     font-weight: bolder;
+}
+
+.drinksdop{
+    color: rgb(30, 29, 27);
+    font-weight: lighter;
+}
+.drinks{
+    color: rgb(30, 29, 27);
+    font-weight: lighter;
+}
+form {
+    margin-top: 20px;
+    font-weight: bolder;
+}
+label {
+    display: block;
+}
+button {
+    background-color: #70bdef;
+    color: black;
+    padding: 10px 15px;
 }
