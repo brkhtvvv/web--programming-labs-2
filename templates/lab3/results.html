@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{# номер лабораторной работы: #}
+{% block lab %}Лабораторная работа 3{% endblock %}
+{# основной контент: #}
+{% block main %}
+  
+    <h1>Результаты поиска</h1>
+    {% if khl %}
+        <p>Цены на игры КХЛ от {{ min_price }} до {{ max_price }} рублей:</p>
+        <ul>
+        {% for khl in khl %}
+            <li>
+                <strong>{{ khl.name }}</strong><br>
+                Город: {{ khl.city }}<br>
+                Средняя стоимость билета: {{ khl.ticket_price }} руб.<br>
+                Год основания: {{ khl.founded }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Билеты в данном диапазоне цен не найдены.</p>
+    {% endif %}
+    <br>
+    <a href="/lab3/search">Вернуться к поиску</a>
+    
+    <div>
+        <a href="http://127.0.0.1:5000/menu" class='backmenu'>Вернуться в главное меню</a>
+    </div>
+{% endblock %}
