@@ -2,6 +2,34 @@
 
 {# номер лабораторной работы: #}
 {% block lab %}Лабораторная работа 6{% endblock %}
+{% block styles %}
+<style>
+    button {
+        margin-left: 15px;
+        padding: 8px; 
+        background-color: white; 
+        border: 2px solid rgb(1, 37, 1); 
+        color:  rgb(1, 37, 1); 
+        border-radius: 4px; 
+        cursor: pointer; 
+        transition: background-color 0.3s, color 0.3s; 
+    }
+    button:hover {
+        background-color: rgb(238, 135, 10); 
+    }
+    #office-list {
+        list-style: none;
+        padding: 0; 
+    }
+    #office-list li {
+        margin-bottom: 15px; 
+    }
+    #total-cost {
+        margin-top: 20px; 
+        color: rgb(1, 38, 1);
+    }
+</style>
+{% endblock %}
 {% block script %}
 <script>
 function getOfficeList() {

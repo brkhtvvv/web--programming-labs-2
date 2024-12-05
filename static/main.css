@@ -73,3 +73,29 @@ a.block {
     padding: 30px;
     text-align: center;
 }
+
+button {
+    margin-left: 15px;
+    padding: 8px; 
+    background-color: rgb(250, 203, 203); 
+    border: 2px solid rgb(255, 14, 14); 
+    color:  rgb(130, 18, 18); 
+    font-weight: bolder;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+button:hover {
+    background-color: rgb(238, 10, 10); 
+}
+#office-list {
+    list-style: none;
+    padding: 0; 
+}
+#office-list li {
+    margin-bottom: 15px; 
+}
+#total-cost {
+    margin-top: 20px; 
+    color: rgb(1, 38, 1);
+}
