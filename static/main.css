@@ -77,9 +77,9 @@ a.block {
 button {
     margin-left: 15px;
     padding: 8px; 
-    background-color: rgb(250, 203, 203); 
-    border: 2px solid rgb(255, 14, 14); 
-    color:  rgb(130, 18, 18); 
+    background-color: rgb(203, 218, 250); 
+    border: 2px solid rgb(0, 20, 198); 
+    color:  rgb(14, 21, 159); 
     font-weight: bolder;
     border-radius: 4px; 
     cursor: pointer; 
