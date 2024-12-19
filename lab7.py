@@ -78,6 +78,8 @@ def put_film(id):
     film = request.get_json()
     if film ['description'] == '':
         return jsonify({'description': 'Заполните описание'}), 400
+    if not film.get('title'):
+        film['title'] = film['title_ru']
     films[id] = film
     jsonify(films[id])
 
@@ -88,6 +90,8 @@ def add_film():
         abort(400)
     if film.get('description', '') == '':
         return jsonify({'description': 'Заполните описание'}), 400
+    if not film.get('title'):
+        film['title'] = film['title_ru']
     films.append(film)
     return jsonify(film), 201
 
