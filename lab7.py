@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, request, abort, jsonify, abort, current_app
+from flask import Blueprint, render_template, request, abort, jsonify, abort, current_app 
 import psycopg2
-from psycopg2.extras import RealDictCursor
+from psycopg2.extras import RealDictCursor 
 
 lab7 = Blueprint('lab7', __name__)
 
