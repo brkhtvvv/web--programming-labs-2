@@ -12,6 +12,8 @@ from lab5 import lab5
 from lab6 import lab6
 from lab7 import lab7
 from lab8 import lab8
+from lab9 import lab9
+
 from db.models import users
 from flask_login import LoginManager
 
@@ -49,6 +51,7 @@ app.register_blueprint(lab5)
 app.register_blueprint(lab6)
 app.register_blueprint(lab7)
 app.register_blueprint(lab8)
+app.register_blueprint(lab9)
 
 @app.route("/")
 @app.route("/index")
@@ -77,6 +80,7 @@ def menu():
     <li><a href="http://127.0.0.1:5000/lab6">Шестая лабораторная</a></li> 
     <li><a href="http://127.0.0.1:5000/lab7">Седьмая лабораторная</a></li> 
     <li><a href="/lab8">Восьмая лабораторная</a></li>  
+    <li><a href="/lab9">Девятая лабораторная</a></li> 
     <footer>
         &copy: Бархатова Ольга, ФБИ-24, 3 курс, 2024
     </footer>
